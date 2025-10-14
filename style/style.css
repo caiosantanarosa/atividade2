@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #000000;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.header {
+    grid-area: header;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menunav {
+    width: 50%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.main {
+    grid-area: main;
+    padding: 10px;
+    max-width: 1500px;
+    min-width: 300px;
+}
+
+.main-inicial {
+    display: grid;
+    grid-template-areas:
+        "img img img"
+        "primeiro primeiro primeiro"
+        "segundo terceiro quarto"
+        "quinto quinto quinto";
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.main-inicial img {
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    height: 700px;
+    max-width: 1200px;
+    min-width: 0;
+    grid-area: img;
+}
+
+.main-inicial section {
+    text-align: center;
+    margin: auto;
+}
+
+.main-inicial .primeiro {
+    grid-area: primeiro;
+    height: 100px;
+    max-width: 1200px;
+    min-width: 800px;
+}
+
+.main-inicial .segundo {
+    grid-area: segundo;
+    height: 300px;
+    width: 300px;
+}
+
+.main-inicial .terceiro {
+    grid-area: terceiro;
+    height: 300px;
+    width: 300px;
+}
+
+.main-inicial .quarto {
+    grid-area: quarto;
+    height: 300px;
+    width: 300px;
+}
+
+.main-inicial .quinto {
+    grid-area: quinto;
+    height: 300px;
+    max-width: 1200px;
+    min-width: 800px;
+}
+
+.footer {
+    grid-area: footer;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    .main-inicial {
+        display: grid;
+        grid-template-areas:
+            "img img"
+            "primeiro primeiro"
+            "segundo terceiro"
+            "quarto quarto"
+            "quinto quinto";
+        gap: 50px;
+        margin: 0 auto;
+    }
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+}

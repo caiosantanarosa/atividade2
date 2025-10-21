@@ -7,14 +7,14 @@
 .container {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #000000;
+    background-color: #fcbf49;
+    color: #ffffff;
     display: grid;
     grid-template-areas:
-        "header header"
-        "main main"
+    "header header"
+    "main main"
         "footer footer";
-    width: 100vw;
+        width: 100vw;
     overflow-x: hidden;
 }
 
@@ -26,6 +26,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #d62828;
+
+    border-radius: 0px 0px 30px 30px;
 }
 
 .menunav {
@@ -42,55 +45,88 @@
 
 .menu a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
 }
 
-li {
+.menu li {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     list-style: none;
     position: relative;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.menu li:hover{
+    background-color: #f77f00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .main {
     grid-area: main;
-    padding: 10px;
-    max-width: 1500px;
-    min-width: 300px;
+    padding: 10px auto;
+    width: 100%;
+    justify-items: center;
 }
 
-.main-inicial {
+.main-inicial{
     display: grid;
     grid-template-areas:
         "img img img"
         "primeiro primeiro primeiro"
-        "segundo terceiro quarto"
-        "quinto quinto quinto";
+        "segundo terceiro quarto";
+    margin: 10px auto 50px;
     gap: 50px;
-    margin: 0 auto;
 }
 
 .main-inicial img {
     display: block;
     margin: auto;
-    border-radius: 8px;
-    height: 700px;
-    max-width: 1200px;
-    min-width: 0;
+    border-radius: 20px;
+    width: max(1200px, 50vw);
+    height: auto;
     grid-area: img;
 }
 
-.main-inicial section {
-    text-align: center;
+.main-inicial #section {
+    text-align: justify;
     margin: auto;
+    background-color: #E76F51;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px 40px;
+}
+
+.main-inicial #section a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #d62828;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.main-inicial #section a:hover {
+    font-weight: bold   ;
+    background-color: #f77f00;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(5px);
 }
 
 .main-inicial .primeiro {
     grid-area: primeiro;
-    height: 100px;
-    max-width: 1200px;
-    min-width: 800px;
+    height: 120px;
+    width: 1200px;
 }
 
 .main-inicial .segundo {
@@ -102,7 +138,7 @@ li {
 .main-inicial .terceiro {
     grid-area: terceiro;
     height: 300px;
-    width: 300px;
+    width: 400px;
 }
 
 .main-inicial .quarto {
@@ -111,37 +147,74 @@ li {
     width: 300px;
 }
 
-.main-inicial .quinto {
-    grid-area: quinto;
-    height: 300px;
-    max-width: 1200px;
-    min-width: 800px;
-}
-
 .footer {
+    width: 100%;
     grid-area: footer;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: #003049;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .main-inicial {
-        display: grid;
         grid-template-areas:
             "img img"
-            "primeiro primeiro"
-            "segundo terceiro"
-            "quarto quarto"
-            "quinto quinto";
-        gap: 50px;
-        margin: 0 auto;
+            "primeiro segundo"
+            "terceiro quarto";
+        gap: 30px;
     }
 
     .header {
         flex-direction: column;
         height: auto;
         padding: 20px 0;
+    }
+
+    .main-inicial img {
+        width: 1000px;
+        height: auto;
+    }
+
+    .main-inicial #section {
+        height: 300px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main-inicial {
+        grid-template-areas:
+            "img"
+            "primeiro"
+            "segundo"
+            "terceiro"
+            "quarto";
+        gap: 50px;
+    }
+
+    .main-inicial img {
+        width: 800px;
+        height: auto;
+    }
+
+    .main-inicial #section {
+        width: 600px;
+        height: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-inicial img {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-inicial #section {
+        width: 90%;
     }
 }

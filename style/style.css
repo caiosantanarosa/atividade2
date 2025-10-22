@@ -55,8 +55,7 @@
     height: 100%;
     list-style: none;
     position: relative;
-    height: 40px;
-    width: 100px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -64,9 +63,41 @@
     background-color: #f77f00;
     font-weight: bold;
     cursor: pointer;
-    transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.3s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.submenu {
+    display: flex;
+    position: absolute;
+    background-color: #f77f00;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    visibility: hidden;
+    top: 45px;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
+}
+
+.dropdown:hover .submenu {
+    visibility: visible;
+}
+
+.submenu a{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.submenu a:hover{
+    background-color: #d62828;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: ease-in-out 0.3s;
+}
+
 
 .main {
     grid-area: main;

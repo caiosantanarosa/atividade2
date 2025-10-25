@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cozinha Solidária 24hr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -12,12 +13,21 @@
     <header class="header">
         <h1>Cozinha Solidária 24h</h1>
         <nav class="menunav">
+            <button onclick="abreMenu()" class="icon-menu"><span class="material-symbols-outlined">menu</span></button>
             <ul class="menu">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
+                <li class="dropdown">
+                    <p>Nosso trabalho</p>
+                    <div class="submenu">
+                        <a href="projetos.html">Projetos</a>
+                        <a href="doacoes.html">Doações</a>
+                    </div>
+                </li>
                 <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
+
     </header>
     <main class="main">
         <h2>Cadastro — Cozinha Solidária 24h</h2>
@@ -103,6 +113,8 @@
         </address>
         <p>&copy; 2024 Cozinha Solidária 24h. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 <!-- <p>v2</p> -->
 </html>

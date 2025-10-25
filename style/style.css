@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* estilo p todas as paginas */
+
 .container {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -35,12 +37,32 @@
     width: 50%;
 }
 
+.icon-menu{
+    display: none;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.icon-menu:hover{
+    background-color: #f77f00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100%;
     width: 100%;
+    transition: ease-in-out 0.3s;
 }
 
 .menu a {
@@ -78,7 +100,7 @@
     visibility: hidden;
     top: 45px;
     box-sizing: border-box;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
 }
 
@@ -98,13 +120,14 @@
     transition: ease-in-out 0.3s;
 }
 
-
 .main {
     grid-area: main;
     padding: 10px auto;
     width: 100%;
     justify-items: center;
 }
+
+/* estilo p tela inicial  */
 
 .main-inicial{
     display: grid;
@@ -125,7 +148,7 @@
     grid-area: img;
 }
 
-.main-inicial #section {
+#section {
     text-align: justify;
     margin: auto;
     background-color: #E76F51;
@@ -178,6 +201,70 @@
     width: 300px;
 }
 
+/* estilo p tela de projetos  */
+
+.main-projetos{
+    display: grid;
+    grid-template-areas: 
+    "titulo titulo"
+    "um dois"
+    "tres quatro";
+    gap: 20px;
+    padding: 0 3vw 0 3vw;
+}
+
+.main-projetos .titulo{
+    grid-area: titulo;
+    text-align: center;
+    margin: 20px;
+}
+
+.info-projetos{
+    text-align: center;
+    margin: auto auto 20px auto;
+    background-color: #E76F51;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px 40px;
+    height: 34vh;
+}
+
+.info-projetos a{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #d62828;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.info-projetos a:hover{
+    font-weight: bold   ;
+    background-color: #f77f00;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(5px);
+}
+
+.um{
+    grid-area: um;
+}
+
+.dois{
+    grid-area: dois;
+}
+
+.tres{
+    grid-area: tres;
+}
+
+.quatro{
+    grid-area: quatro;
+}
+
 .footer {
     width: 100%;
     grid-area: footer;
@@ -198,6 +285,15 @@
             "primeiro segundo"
             "terceiro quarto";
         gap: 30px;
+    }
+
+    .main-projetos{
+        grid-template-areas:
+        "titulo"
+        "um"
+        "dois" 
+        "tres"
+        "quatro";    
     }
 
     .header {
@@ -247,5 +343,32 @@
 
     .main-inicial #section {
         width: 90%;
+    }
+}
+
+@media (max-width:750px){
+    .menunav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+
+    .menu{
+        display: none;
+        flex-direction: column;;
+    }
+
+    .submenu{
+        left: 140px;
+        top: 0px;
+    }
+
+    .info-projetos{
+        height: auto;
     }
 }
